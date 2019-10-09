@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>ANIMAIS PERDIDOS</title>
+    <style>
+        body {
+            background-color: rgb(146, 146, 255);
+            color: rgb(17, 8, 8);
+            font: normal 14pt Verdana;
+        }
+        h1 {
+            color: rgb(227, 229, 230);
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animais Perdidos</h1>
+    <p><strong>CADASTRE AQUI UM ANIMALZINHO ABANDONADO</strong></p>
+    <h1>QUAL A ESPECIE DO ANIMAL: </h1>
+    <p><label for="esp1">Especie do animal:</label>
+        <input type="text" id="esp1" class="form-control" style="width: 600pt" autofocus>
+    </p> 
+    <p><label for="carac1">Caracteristicas do animal:</label>
+        <input type="text" id="carac1" class="form-control" style="width: 600pt" autofocus>
+    </p>
+    <p><label for="onde1">Local onde encontrou o animal:</label>
+        <input type="text" id="onde1" class="form-control" style="width: 600pt" autofocus>
+    </p>
+    <p><label for="data1">Data em que encontrou o animal:</label>
+        <input type="date" id="data1" class="form-control" style="width: 200pt" autofocus>
+    </p>
+    <p><label for="imagem1">Foto do animal:</label>
+        <input type="file" id="imagem1" class="form-control" style="width: 400pt" autofocus>
+    </p>
+        <input type="button" value="CADASTRAR" id="cadastrar" onclick="cadastrar()" class="btn btn-primary"><br><br><br>
+        
+
+        Especie do animal:<output id="exibAnimal"></output><br>
+        Caracteristicas do animal:<output id="exibCaracteristica"></output><br/>
+        Local onde encontrou o animal:<output id="exibLocal"></output><br>
+        Data em que encontrou o animal:<output id="exibData"></output><br>
+        Foto: <output id="exibFoto"></output><br>
+
+    <script>
+       function cadastrar(){
+           var esp1 = document.getElementById("esp1").value
+           var carac1 = document.getElementById("carac1").value
+           var onde1 = document.getElementById("onde1").value
+           var data1 = document.getElementById("data1").value
+           var imagem1 = document.getElementById("imagem1").value
+
+           if(esp1 == "" || carac1 == "" || onde1 == "" || data1 == ""){
+               alert("Campo em Branco! Digite os dados!")
+           }else{
+                this.exibir() 
+
+           }
+          
+        }
+
+        function exibir(){
+            var esp1 = document.getElementById("esp1").value
+            var exibAnimal = document.getElementById("exibAnimal")
+            exibAnimal.innerHTML= esp1
+
+            var carac1 = document.getElementById("carac1").value
+            var exibCaracteristica = document.getElementById("exibCaracteristica")
+            exibCaracteristica.innerHTML= carac1
+
+            var onde1 = document.getElementById("onde1").value
+            var exibLocal = document.getElementById("exibLocal")
+            exibLocal.innerHTML= onde1
+            
+            var data1 = new Number(data1)
+            var data1 = document.getElementById("data1").value
+            var exibData = document.getElementById("exibData")
+            exibData.innerHTML= data1
+
+            
+        }
+            
+        
+
+        
+           
+          
+
+       
+
+    </script>
+</body>
+</html>
